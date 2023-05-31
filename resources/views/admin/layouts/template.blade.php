@@ -8,7 +8,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Dashboard - Analytics</title>
+    <title>@yield('page_title')</title>
 
 
 
@@ -150,19 +150,19 @@
                         <span class="menu-header-text">Orders</span>
                     </li>
                     <li class="menu-item ">
-                        <a href="{{ route('pendingorder') }}" class="menu-link">
+                        <a href="{{ route('pendingorders') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Pending Orders</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="{{ route('completedorder') }}" class="menu-link">
+                        <a href="{{ route('completedorders') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Completed Orders</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="{{ route('cancelorder') }}" class="menu-link">
+                        <a href="{{ route('cancelorders') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Cancel Orders</div>
                         </a>

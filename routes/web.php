@@ -53,9 +53,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     });
 
     Route::controller(OrderController::class)->group(function () {
-        Route::get('/admin/pending-order', 'Index')->name('pendingorder');
-        Route::get('/admin/completed-order', 'CompletedOrder')->name('completedorder');
-        Route::get('/admin/cancel-order', 'CancelOrder')->name('cancelorder');
+        Route::get('/admin/pending-order', 'Index')->name('pendingorders');
+        Route::get('/admin/completed-order', 'CompletedOrders')->name('completedorders');
+        Route::get('/admin/cancel-order', 'CancelOrder')->name('cancelorders');
     });
 });
 
