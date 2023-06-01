@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class SubCategoryController extends Controller
@@ -13,6 +14,7 @@ class SubCategoryController extends Controller
     }
     public function AddSubCategory()
     {
-        return view('admin.addsubcategory');
+        $categories = Category::latest()->get();
+        return view('admin.addsubcategory',compact('categories'));
     }
 }

@@ -25,12 +25,14 @@
                         <div class="row">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Select Category</label>
                             <div class="col-sm-10 my-3">
-                                <select class="form-select" id="category" name="category"
+                                <select class="form-select" id="category_id" name="category_id"
                                     aria-label="Default select example">
                                     <option selected>Select Category</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                    @endforeach
+
+
                                 </select>
                             </div>
                         </div>
