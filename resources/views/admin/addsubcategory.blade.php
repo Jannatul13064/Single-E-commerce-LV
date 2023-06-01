@@ -12,12 +12,12 @@
                     <small class="text-muted float-end">Ex: Mobile, T-shirt , Chocolate etc</small>
                 </div>
                 <div class="card-body">
-                    <form action="" method="POST">
+                    <form action="{{route('storesubcategory')}}" method="POST">
                         @csrf
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Sub-Category Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="subcategory_name" name="subcategory_name"
+                                <input type="text" class="form-control" id="subcategory_name" name="sub_category_name"
                                     placeholder="Sub Category Name" />
                             </div>
 

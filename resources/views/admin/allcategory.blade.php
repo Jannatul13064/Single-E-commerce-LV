@@ -10,9 +10,7 @@
             @if (session()->has('message'))
                 <div class="alert alert-success">
                     {{session()->get('message')}}
-
                 </div>
-
             @endif
             <div class="table-responsive text-nowrap">
                 <table class="table">
@@ -31,7 +29,7 @@
                             <tr>
                                 <td>{{$category->id}}</td>
                                 <td>{{$category->category_name}}</td>
-                                <td>{{$category->sub_category_count}}</td>
+                                <td>{{$category->subcategory_count}}</td>
                                 <td>{{$category->slug}}</td>
                                 <td>
                                     <a href="{{route('editcategory',['id' => $category->id])}}" class="btn btn-primary">Edit</a>
