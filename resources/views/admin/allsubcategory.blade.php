@@ -12,17 +12,17 @@
                     <thead class="table-light">
                         <tr>
                             <th>ID</th>
-                            <th>Category Name</th>
-                            <th>Sub-Category</th>
-                            <th>Available Products</th>
+                            <th>Sub Category Name</th>
+                            <th>Category</th>
+                            <th>Product</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
                         <tr>
                             <td>1</td>
+                            <td>Coffee</td>
                             <td>Grocery</td>
-                            <td>10</td>
                             <td>100</td>
                             <td>
                                 <a href="" class="btn btn-primary">Edit</a>

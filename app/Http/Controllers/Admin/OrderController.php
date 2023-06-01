@@ -15,7 +15,7 @@ class OrderController extends Controller
     {
         return view('admin.completedorders');
     }
-    public function CancelOrder()
+    public function CancelOrders()
     {
         return view('admin.cancelorders');
     }

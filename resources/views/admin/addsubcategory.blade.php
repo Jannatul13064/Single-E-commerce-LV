@@ -17,7 +17,7 @@
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Sub-Category Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="basic-default-name" name="category_name"
+                                <input type="text" class="form-control" id="subcategory_name" name="subcategory_name"
                                     placeholder="Sub Category Name" />
                             </div>
 
@@ -25,7 +25,7 @@
                         <div class="row">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Select Category</label>
                             <div class="col-sm-10 my-3">
-                                <select class="form-select" id="exampleFormControlSelect1"
+                                <select class="form-select" id="category" name="category"
                                     aria-label="Default select example">
                                     <option selected>Select Category</option>
                                     <option value="1">One</option>
@@ -36,7 +36,7 @@
                         </div>
                         <div class="row justify-content-end">
                             <div class="col-sm-10">
-                                <button type="submit" class="btn btn-primary">Add Category</button>
+                                <button type="submit" class="btn btn-primary">Add Sub Category</button>
                             </div>
                         </div>
                     </form>
