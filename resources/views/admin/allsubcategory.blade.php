@@ -24,16 +24,20 @@
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
+                        @foreach ($allsubcategories as $subcategory)
                         <tr>
-                            <td>1</td>
-                            <td>Coffee</td>
-                            <td>Grocery</td>
-                            <td>100</td>
+                            <td>{{$subcategory->id}}</td>
+                            <td>{{$subcategory->sub_category_name}}</td>
+                            <td>{{$subcategory->category_name}}</td>
+                            <td>{{$subcategory->product_count}}</td>
                             <td>
-                                <a href="" class="btn btn-primary">Edit</a>
-                                <a href="" class="btn btn-danger">Delete</a>
+                                <a href="{{route('editsubcategory',$subcategory->id)}}" class="btn btn-primary">Edit</a>
+                                <a href="{{route('deletesubcategory',$subcategory->id)}}" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
+
+                        @endforeach
+
                     </tbody>
                 </table>
             </div>

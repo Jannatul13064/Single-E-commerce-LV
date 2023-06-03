@@ -7,6 +7,12 @@
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pages/</span>All Sub-Categories</h4>
     <div class="card">
         <h5 class="card-header">Product Sub-Categories Info</h5>
+
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{session()->get('message')}}
+            </div>
+        @endif
         <div class="table-responsive text-nowrap">
             <table class="table">
                 <thead class="table-light">
@@ -19,16 +25,23 @@
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
-                    <tr>
-                        <td>1</td>
-                        <td>Coffee</td>
-                        <td>400</td>
-                        <td>p_img</td>
-                        <td>
-                            <a href="" class="btn btn-primary">Edit</a>
-                            <a href="" class="btn btn-danger">Delete</a>
-                        </td>
-                    </tr>
+                    @foreach ($products as $product)
+                        <tr>
+                            <td>{{$product->id}}</td>
+                            <td>{{$product->product_name}}</td>
+                            <td>{{$product->price}}</td>
+                            <td>
+                                <img style="height:100px" src="{{asset($product->product_img)}}" alt="" srcset="">
+                                <a href="{{route('editproductimg',$product->id)}}" class="btn btn-primary">Update Image</a>
+                            </td>
+                            <td>
+                                <a href="{{route('editproduct',$product->id)}}" class="btn btn-primary">Edit</a>
+                                <a href="{{route('deleteproduct',$product->id)}}" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+
+                    @endforeach
+
                 </tbody>
             </table>
         </div>
