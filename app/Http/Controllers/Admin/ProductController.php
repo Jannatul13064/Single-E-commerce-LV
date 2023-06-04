@@ -27,7 +27,7 @@ class ProductController extends Controller
     public function StoreProduct(Request $request){
 
         $request->validate([
-            'product_name'=>'required|unique:products|max:75',
+            'product_name'=>'required|unique:products|max:225',
             'price'=> 'required',
             'quantity'=> 'required',
             'product_short_des'=> 'required',
@@ -135,11 +135,11 @@ class ProductController extends Controller
     public function DeleteProduct ($id){
         $cat_id = Product::where('id',$id)->value('product_category_id');
         $sub_cat_id = Product::where('id',$id)->value('product_subcategory_id');
+
         Product::findOrFail($id)->delete();
+
         Category::where('id',$cat_id)->decrement('product_count',1);
         Subcategory::where('id',$sub_cat_id)->decrement('product_count',1);
-
-
 
         return redirect()->route('allproducts')->with('message','Product Successfully deleted');
 

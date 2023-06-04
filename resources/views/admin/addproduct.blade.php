@@ -19,6 +19,9 @@
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="product_name" name="product_name"
                                 placeholder="Product Name" />
+                                @error('product_name')
+                                    <small class="alert alert-danger">{{$message}}</small>
+                                @enderror
                         </div>
 
                     </div>
@@ -27,6 +30,9 @@
                         <div class="col-sm-10">
                             <input type="number" class="form-control" id="price" name="price"
                                 placeholder="Product Price" />
+                                @error('price')
+                                <small class="alert alert-danger">{{$message}}</small>
+                            @enderror
                         </div>
 
                     </div>
@@ -35,6 +41,9 @@
                         <div class="col-sm-10">
                             <input type="number" class="form-control" id="quantity" name="quantity"
                                 placeholder="Product Quntity" />
+                                @error('quantity')
+                                <small class="alert alert-danger">{{$message}}</small>
+                            @enderror
                         </div>
 
                     </div>
@@ -42,6 +51,9 @@
                         <label class="col-sm-2 col-form-label"  >Short Description</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" name="product_short_des" id="" cols="30" rows="10" style="height:69px"></textarea>
+                            @error('product_short_des')
+                            <small class="alert alert-danger">{{$message}}</small>
+                            @enderror
                         </div>
 
                     </div>
@@ -49,12 +61,20 @@
                         <label class="col-sm-2 col-form-label"  >Long Description</label>
                         <div class="col-sm-10">
                            <textarea class="form-control" name="product_long_des" id="" cols="30" rows="10"></textarea>
+                           @error('product_long_des')
+                           <small class="alert alert-danger">{{$message}}</small>
+                           @enderror
+                   </div>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label"  >Product Image</label>
                         <div class="col-sm-10">
                             <input class="form-control" type="file" id="formFile" name="product_img"/>
+                            @error('product_img')
+                            <small class="alert alert-danger">{{$message}}</small>
+                            @enderror
+                    </div>
                         </div>
                     </div>
                     <div class="row">
@@ -70,6 +90,10 @@
 
                             @endforeach
                             </select>
+                            @error('product_category_id')
+                            <small class="alert alert-danger">{{$message}}</small>
+                            @enderror
+                    </div>
 
                         </div>
                     </div>
@@ -85,6 +109,10 @@
                                 @endforeach
 
                             </select>
+                            @error('product_subcategory_id')
+                            <small class="alert alert-danger">{{$message}}</small>
+                            @enderror
+
                         </div>
                     </div>
                     <div class="row justify-content-end">
