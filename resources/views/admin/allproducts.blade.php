@@ -4,9 +4,9 @@
 @endsection
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pages/</span>All Sub-Categories</h4>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pages/</span>All Products</h4>
     <div class="card">
-        <h5 class="card-header">Product Sub-Categories Info</h5>
+        <h5 class="card-header">Products Info</h5>
 
         @if (session()->has('message'))
             <div class="alert alert-success">
