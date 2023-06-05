@@ -42,7 +42,7 @@
    </head>
    <body>
       <!-- banner bg main start -->
-      <div class="banner_bg_main">
+      <div class="banner_bg_main mb-4">
          <!-- header top section start -->
          <div class="container">
             <div class="header_section_top">
@@ -67,7 +67,7 @@
             <div class="container">
                <div class="row">
                   <div class="col-sm-12">
-                     <div class="logo"><a href="index.html"><img src="{{asset('frontend_asset/images/logo.png')}}"></a></div>
+                     <div class="logo"><a href="/" class="text-none "><span class="fs-2" style="font-size:10vh ; color:aliceblue">BazarGrab</span></a></div>
                   </div>
                </div>
             </div>
@@ -92,7 +92,7 @@
                      </button>
                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         @foreach ($categories as $category)
-                        <a class="dropdown-item" href="#">{{$category->category_name}}</a>
+                        <a class="dropdown-item" href="{{route('category',[$category->id,$category->slug])}}">{{$category->category_name}}</a>
                         @endforeach
 
                      </div>
@@ -143,7 +143,7 @@
       </div>
       <!-- banner bg main end -->
 
-            <div class="container py-5">
+            <div class="container ">
                <div>
                 @yield('main-content')
                </div>

@@ -14,16 +14,15 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 
-
+//Client Side-Control
 
 Route::controller(HomeController::class)->group(function(){
     Route::get('/','Index')->name('home');
-
 });
 
 Route::controller(ClientController::class)->group(function(){
     Route::get('/category/{id}/{slug}','CategoryPage')->name('category');
-    Route::get('/single-product','SingleProduct')->name('singleproduct');
+    Route::get('/product-details/{id}/{slug}','SingleProduct')->name('singleproduct');
     Route::get('/add-to-cart','AddToCart')->name('addtocart');
     Route::get('/checkout','Checkout')->name('checkout');
     Route::get('/user-profile','UserProfile')->name('userprofile');
@@ -39,6 +38,19 @@ Route::get('/dashboard', function () {
 
 // Route::get('/userprofile', [DashboardController::class, 'Index']);
 
+Route::middleware(['auth','role:user'])->group(function(){
+    Route::controller(ClientController::class)->group(function(){
+        Route::get('/add-to-cart','AddToCart')->name('addtocart');
+        Route::post('/add-product-to-cart','AddProductToCart')->name('addproducttocart');
+        Route::get('/checkout','Checkout')->name('checkout');
+        Route::get('/user-profile','UserProfile')->name('userprofile');
+        Route::get('/user-profile/user-pending-order','PendingOrder')->name('pendingorder');
+        Route::get('/user-profile/history','History')->name('history');
+        Route::get('/todays-deal','TodaysDeal')->name('todaysdeal');
+        Route::get('/customer-service','CustomerService')->name('customerservice');
+    });
+
+});
 
 // Controller Group with Middleware
 //Dashboard Controller for Super-User

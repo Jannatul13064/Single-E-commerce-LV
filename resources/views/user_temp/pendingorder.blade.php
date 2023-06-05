@@ -3,6 +3,6 @@
 @section('profile-content')
 
 <div>
-    hi
+   pending orders
 </div>
 @endsection

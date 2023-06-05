@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -10,10 +11,20 @@ class ClientController extends Controller
     public function CategoryPage($id){
 
         $category = Category::findOrFail($id);
-        return view('user_temp.category',compact('category'));
+        $products = Product::where('product_category_id',$id)->latest()->get();
+        return view('user_temp.category',compact('category','products'));
     }
-    public function SingleProduct(){
-        return view('user_temp.singleproduct');
+
+    // have a question here! why we are not using the same thing as CategoryPage() in the SingleProduct. Though they worked
+    public function SingleProduct($id){
+        $product = Product::findOrFail($id);
+        $sub_cat_id = Product::where('id',$id)->value('product_subcategory_id');
+        $related_products = Product::where('product_subcategory_id',$sub_cat_id)->latest()->get();
+        return view('user_temp.singleproduct',compact('product','related_products'));
+    }
+
+    public function AddProductToCart(){
+        return '';
     }
 
     public function Checkout(){
@@ -25,6 +36,12 @@ class ClientController extends Controller
     public function UserProfile(){
         return view('user_temp.userprofile');
     }
+    public function PendingOrder(){
+        return view('user_temp.pendingorder');
+    }
+    public function History(){
+        return view('user_temp.history');
+    }
     public function NewRelease(){
         return view('user_temp.newrelease');
     }
@@ -35,4 +52,6 @@ class ClientController extends Controller
     public function CustomerService(){
         return view('user_temp.customerservice');
     }
+
+
 }
