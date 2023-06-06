@@ -31,10 +31,12 @@
                         <div>
                             <form action="{{route('addproducttocart',$product->id)}}" method="POST">
                                 @csrf
+
                                 <input type="hidden" name="product_id" id="" value="{{$product->id}}">
                                 <div class="form-group">
-                                    <label for="productQuantity">Quantity :</label>
-                                    <input type="number" class="form-control" name="product_quantity" id="" min="1"><br/>
+                                    <input type="hidden" name="price" id="" value="{{$product->price}}">
+                                    <label for="quantity">Quantity :</label>
+                                    <input type="number" class="form-control" name="quantity" id="" min="1"><br/>
                                     <input class="btn btn-warning" type="submit" value="Add to Cart">
                                 </div>
                             </form>
@@ -62,6 +64,8 @@
                         <form action="{{route('addproducttocart')}}" method="POST">
                             @csrf
                             <input type="hidden" name="product_id" id="" value="{{$product->id}}">
+                            <input type="hidden" name="price" id="" value="{{$product->price}}">
+                            <input type="hidden" name="quantity" id="" value="1">
                             <div class="form-group">
                                 <input class="btn btn-warning" type="submit" value="Buy Now">
                             </div>

@@ -13,7 +13,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Eflyer</title>
+      <title>BazarGrab</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -74,7 +74,7 @@
          </div>
          <!-- logo section end -->
          <!-- header section start -->
-         <div class="header_section">
+         <div class="header_section p-3">
             <div class="container">
                <div class="containt_main">
                   <div id="mySidenav" class="sidenav">
@@ -92,7 +92,7 @@
                      </button>
                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         @foreach ($categories as $category)
-                        <a class="dropdown-item" href="{{route('category',[$category->id,$category->slug])}}">{{$category->category_name}}</a>
+                            <a class="dropdown-item" href="{{route('category',[$category->id,$category->slug])}}">{{$category->category_name}}</a>
                         @endforeach
 
                      </div>
@@ -122,11 +122,11 @@
                      </div>
                      <div class="login_menu">
                         <ul>
-                           <li><a href="#">
+                           <li><a href="/add-to-cart">
                               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                               <span class="padding_10">Cart</span></a>
                            </li>
-                           <li><a href="#">
+                           <li><a href="/add-to-cart">
                               <i class="fa fa-user" aria-hidden="true"></i>
                               <span class="padding_10">Cart</span></a>
                            </li>
@@ -144,9 +144,7 @@
       <!-- banner bg main end -->
 
             <div class="container ">
-               <div>
                 @yield('main-content')
-               </div>
             </div>
 
 
@@ -154,7 +152,7 @@
       <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
-            <div class="footer_logo"><a href="index.html"><img src="{{asset('frontend_asset/images/footer-logo.png')}}"></a></div>
+            <div class="footer_logo"><a href="/"><span class="fs-2" style="font-size:10vh ; color:aliceblue">BazarGrab</span></a></div>
             <div class="input_bt">
                <input type="text" class="mail_bt" placeholder="Your Email" name="Your Email">
                <span class="subscribe_bt" id="basic-addon2"><a href="#">Subscribe</a></span>
