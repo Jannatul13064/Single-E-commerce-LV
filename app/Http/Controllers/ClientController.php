@@ -95,7 +95,7 @@ class ClientController extends Controller
             $id =$item->id;
             Cart::findOrFail($id)->delete($id);
         }
-
+        UserShipphing::where('user_id',$userid)->first()->delete();
 
 
         return redirect()->route('pendingorder')->with('message','Congratulations! Your Order Placed successfully.');
